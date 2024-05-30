@@ -1,10 +1,12 @@
 import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-[2000px]">
+    <main className="">
       <Hero />
+      <Projects />
     </main>
   );
 }

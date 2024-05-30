@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
-    <header>
-      <nav className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white">
+    <header className="">
+      <nav className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white animate-fade-up animate-duration-1000 animate-delay-[1700ms] animate-ease-out">
         <div className="px-12 w-full mx-auto flex justify-between">
           <div className="flex gap-12 lg:gap-32">
             <a href="#">
