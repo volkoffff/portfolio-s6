@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FloatingPrev from "./floatingPrev";
 
 export default function Projects() {
@@ -57,25 +57,36 @@ export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const handleMouseEnter = (index) => {
-    setHoveredProject(projects[index]);    
+    setHoveredProject(projects[index]);
   };
+
+  useEffect(() => {
+    setHoveredProject(projects[0]);
+  }, []);
 
   return (
     <section className="p-12 min-h-screen flex items-center">
-      <div className="group grid grid-cols-5 gap-12 lg:gap-24">
+      <div className="group grid grid-cols-5 gap-12">
         <div className="col-span-2 relative">
-          <FloatingPrev hoveredProject={hoveredProject}/>
+          <FloatingPrev hoveredProject={hoveredProject} />
         </div>
 
         <div className="col-span-3">
           <ul>
             {projects.map((project, index) => (
               <li
-                className="project text-neutral-400 transition-all hover:text-black font-bold text-5xl md:text-7xl"
+                className="project transition-all font-bold text-5xl md:text-7xl"
                 key={index}
                 onMouseEnter={() => handleMouseEnter(index)}
               >
-                <a className="" href={project.link}>
+                <a
+                  className={`block h-fit ${
+                    hoveredProject === project
+                      ? "text-black"
+                      : "group-hover:text-neutral-400"
+                  }`}
+                  href={project.link}
+                >
                   <p className="">{project.title}</p>
                 </a>
               </li>

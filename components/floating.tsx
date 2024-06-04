@@ -43,7 +43,7 @@ export default function Floating() {
 
   return (
     <a href="" className="w-fit absolute top-[25%]" ref={floating}>
-      <div className="animate-fade animate-duration-1000 animate-delay-[3000ms] animate-ease-out">
+      <div className="animate-fade animate-duration-1000 animate-delay-[4000ms] animate-ease-out">
         <Image
           src="/rolix-trailer.gif"
           className="w-96 rounded-xl shadow-lg"
@@ -53,8 +53,8 @@ export default function Floating() {
           />
       </div>
       <div className="text-lg font-medium mt-4 ">
-        <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[2600ms]">Rolix / Librairie de composant</p>
-        <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[2750ms]">(Entreprise - 2024 ft.Killian David)</p>
+        <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3800ms]">Rolix / Librairie de composant</p>
+        <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3950ms]">(Entreprise - 2024 ft.Killian David)</p>
       </div>
     </a>
   );

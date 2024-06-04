@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <header className="">
-      <nav className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white animate-fade-up animate-duration-1000 animate-delay-[1700ms] animate-ease-out">
+      <nav className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white animate-fade-down animate-duration-2000 animate-delay-[2800ms] animate-ease-out">
         <div className="px-12 w-full mx-auto flex justify-between">
           <div className="flex gap-12 lg:gap-32">
             <a href="#">
@@ -15,7 +15,7 @@ export default function Navbar() {
               <p className="font-medium">Disponible pour du Freelance</p>
             </div>
           </div>
-          <div className="flex gap-12 lg:gap-32 font-medium group [&>ul>li:hover]:!opacity-100">
+          <div className="flex gap-12 lg:gap-32 font-medium group [&>ul>li:hover]:!opacity-100 ">
             <ul className="flex [&>li]:group-has-[li:hover]:opacity-40">
               <li>
                 <a href="">Accueil</a>
