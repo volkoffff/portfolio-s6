@@ -1,10 +1,10 @@
 export default function Footer() {
   return (
     <footer className="mt-48 pt-8">
-      <div className="px-12 space-y-5">
+      <div className="px-12 space-y-6">
         <div className="flex justify-between items-end">
           <a href="#">
-            <h2 className="font-bold text-5xl">Robin Lanfranchi</h2>
+            <h2 className="font-bold text-6xl">Robin Lanfranchi</h2>
           </a>
           <p className="font-semibold">Contact me</p>
         </div>

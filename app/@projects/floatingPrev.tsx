@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface ProjectProps {
   title?: string;
@@ -109,17 +110,18 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
   return (
     <a
       href={hoveredProject?.link}
-      className="w-fit absolute group-hover:opacity-100 opacity-0 transition-all duration-300"
+      className="w-fit absolute group-hover:opacity-100 transition-all duration-300"
       ref={floatingPrev}
     >
-      <div>
-        <img
-          src={hoveredProject?.image}
+      <motion.div>
+        <motion.img
+          src={hoveredProject?.img[0].url}
           className="w-full aspect-video bg-cover rounded-lg shadow-lg animate-duration-[1400ms]"
           alt="Picture of the project"
+          layoutId="img-movable"
           // ref={fadeInRef2}
         />
-      </div>
+      </motion.div>
       <div className="text-lg font-medium mt-5 ease-out animate-delay-300 animate-duration-[500ms]" >
         <p className="font-bold">{hoveredProject?.title}</p>
         <p className="leading-none">{hoveredProject?.description}</p>

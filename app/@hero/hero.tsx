@@ -40,8 +40,8 @@ export default function Hero() {
   return (
     <section className="h-screen p-12 pt-20 flex flex-col justify-between">
       <div>
-        <p  className=" flex items-start justify-between pointer-events-none user-select-none translate-y-[-2vw]">
-          <span ref={textRef}  className="flex justify-between w-full [&>span]:inline-block pointer-events-none user-select-none tracking-[-0.06em] leading-none whitespace-nowrap text-[14.4vw] lg:text-[15.9vw] font-semibold translate-y-[200px] translate-x-[-1.2%]">
+        <p  className=" flex items-start justify-between pointer-events-none user-select-none translate-y-[-1vw]">
+          <span ref={textRef}  className="flex justify-between w-full [&>span]:inline-block pointer-events-none user-select-none tracking-[-0.06em] leading-none whitespace-nowrap text-[14.4vw] lg:text-[14.6vw] font-semibold translate-y-[200px] translate-x-[-1.2%]">
             LANFRANCHI
           </span>
         </p>
