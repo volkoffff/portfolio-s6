@@ -29,6 +29,9 @@ export default function ProjectModal({
                   alt="Picture of the project"
                   layoutId={index === 0 ? "img-movable" : undefined}
                   key={index}
+                  initial={index !== 0 ? { opacity: 0 } : undefined}
+                  animate={index !== 0 ? { opacity: 1 } : undefined}
+                  transition={index !== 0 ? { delay: 0.2 } : undefined}
                 />
               ))}
             </motion.div>
@@ -78,28 +81,17 @@ export default function ProjectModal({
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {hoveredProject.tags.map((tag, index) => (
-                  <p className="font-medium text-sm px-3 py-1 rounded-full bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200/70">{tag.name}</p>
+                  <p className="font-medium text-sm px-3 py-1 rounded-full bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200/70">
+                    {tag.name}
+                  </p>
                 ))}
               </div>
             </div>
-            <p className="text-neutral-800">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              molestiae repellendus tenetur dolore blanditiis accusamus sed,
-              reprehenderit nihil quibusdam ducimus, cumque ipsam. Saepe sed
-              illo dolorum recusandae eligendi quas fugit!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              molestiae repellendus tenetur dolore blanditiis accusamus sed,
-              reprehenderit nihil quibusdam ducimus, cumque ipsam. Saepe sed
-              illo dolorum recusandae eligendi quas fugit!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              molestiae repellendus tenetur dolore blanditiis accusamus sed,
-              reprehenderit nihil quibusdam ducimus, cumque ipsam. Saepe sed
-              illo dolorum recusandae eligendi quas fugit!
-            </p>
+            {hoveredProject.pargraphs.map((pargraph, index) => (
+              <p className="text-neutral-800" key={index}>
+                {pargraph.text}
+              </p>
+            ))}
           </div>
           <motion.button
             className="w-8 h-8 bg-neutral-100 sticky top-10 ml-auto rounded-full"

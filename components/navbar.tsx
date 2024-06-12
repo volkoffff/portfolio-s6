@@ -1,7 +1,15 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function Navbar() {
   return (
     <header className="">
-      <nav className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white animate-fade-down animate-duration-2000 animate-delay-[2800ms] animate-ease-out">
+      <motion.nav
+        initial={{ opacity: 0, y: -60 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.4, duration: 1.6, ease: "easeOut" }}
+        className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white"
+      >
         <div className="px-12 w-full mx-auto flex justify-between">
           <div className="flex gap-12 lg:gap-32">
             <a href="#">
@@ -37,7 +45,7 @@ export default function Navbar() {
             </ul>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </header>
   );
 }

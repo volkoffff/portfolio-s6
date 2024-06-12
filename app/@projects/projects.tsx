@@ -35,6 +35,10 @@ export default function Projects() {
         { name: "Shadcn" },
         { name: "Projet d'entreprise" },
       ],
+      pargraphs: [
+        {text:"En collaboration avec Killian David, j'ai conçu un modèle de départ pour nos logiciels destinés aux clients en entreprise. Étant donné que ces logiciels reposent souvent sur des bases similaires, nous avons développé ce modèle documenté et intégré à Figma. Cela nous permet de créer nos maquettes sur cette plateforme et de développer ensuite nos interfaces en utilisant les mêmes composants."},
+        {text:"Le template comprend de nombreux composants soigneusement nommés, chacun contenant exactement les mêmes noms de variantes que sur Figma. Cette uniformité facilite une transition fluide et optimale entre les deux plateformes."},
+      ]
     },
     {
       title: "Paoline.K",

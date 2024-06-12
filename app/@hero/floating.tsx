@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -42,7 +43,14 @@ export default function Floating() {
   };
 
   return (
-    <a href="" className="w-fit absolute top-[25%]" ref={floating}>
+    <motion.a
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 4.2, duration: 1, ease: "easeOut" }}
+      href=""
+      className="w-fit absolute top-[25%]"
+      ref={floating}
+    >
       <div className="animate-fade animate-duration-1000 animate-delay-[4000ms] animate-ease-out">
         <Image
           src="/rolix-trailer.gif"
@@ -50,12 +58,16 @@ export default function Floating() {
           width={500}
           height={500}
           alt="Picture of the author"
-          />
+        />
       </div>
       <div className="text-lg font-medium mt-4 ">
-        <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3800ms]">Rolix / Librairie de composant</p>
-        <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3950ms]">(Entreprise - 2024 ft.Killian David)</p>
+        <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3800ms]">
+          Rolix / Librairie de composant
+        </p>
+        <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3950ms]">
+          (Entreprise - 2024 ft.Killian David)
+        </p>
       </div>
-    </a>
+    </motion.a>
   );
 }
