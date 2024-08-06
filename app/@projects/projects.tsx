@@ -308,7 +308,7 @@ export default function Projects() {
               >
                 <motion.a
                   layoutId={item.id}
-                  className={`block h-fit w-fit ${
+                  className={`block h-fit w-fit text-left ${
                     hoveredProject === item
                       ? "text-black"
                       : "group-hover:text-neutral-400"
