@@ -5,9 +5,9 @@ export default function Navbar() {
   return (
     <header className="">
       <motion.nav
-        initial={{ opacity: 0, y: -60 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.4, duration: 1.6, ease: "easeOut" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1}}
+        transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
         className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white"
       >
         <div className="px-12 w-full mx-auto flex justify-between">

@@ -19,27 +19,38 @@ export default function ProjectModal({
         layoutId={selectedId}
         className="relative z-1 min-h-[93%] h-fit mt-[7%] w-[90%] bg-white rounded-2xl shadow-[0_0px_50px_-15px_rgba(0,0,0,0.25)]"
       >
-        <motion.div className="p-10 w-full grid grid-cols-[repeat(2,_1fr)_50px] gap-6 h-fit">
-          <motion.div className="sticky top-10 h-fit">
-            <motion.div className="space-y-3">
-              {hoveredProject.img.map((img, index) => (
-                <motion.img
-                  src={img.url}
-                  className="rounded-xl shadow-lg"
-                  alt="Picture of the project"
-                  layoutId={index === 0 ? "img-movable" : undefined}
-                  key={index}
-                  initial={index !== 0 ? { opacity: 0 } : undefined}
-                  animate={index !== 0 ? { opacity: 1 } : undefined}
-                  transition={index !== 0 ? { delay: 0.2 } : undefined}
-                />
-              ))}
+        <motion.div className="p-10 w-full h-fit">
+          <div className="h-fit grid md:grid-cols-3 lg:grid-cols-5 grid-flow-row-dense gap-x-10 gap-y-6">
+            <motion.div className="md:col-span-3 lg:col-span-5 flex justify-between">
+              <motion.p
+                className="text-4xl font-bold"
+                layoutId={`title-${selectedId}`}
+              >
+                {hoveredProject.title}
+              </motion.p>
+              <motion.button
+                className="size-10 bg-black hover:bg-black/80 text-white rounded-full flex items-center justify-center"
+                onClick={() => setSelectedId(null)}
+              >
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 1024 1024"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"></path>
+                </svg>
+              </motion.button>
             </motion.div>
-          </motion.div>
-          <div className="sticky top-10 h-fit space-y-6">
-            <div className="space-y-16">
-              <div className="space-y-6">
-                <div className="flex gap-3">
+            <div className="md:col-span-2 lg:sticky lg:top-10">
+              <div className="space-y-4">
+                <p className="text-xl font-semibold">
+                  {hoveredProject.description}
+                </p>
+                <div className="flex items-center gap-3">
                   <LinkButton link="">
                     Link
                     <svg
@@ -72,33 +83,61 @@ export default function ProjectModal({
                     </svg>
                   </LinkButton>
                 </div>
-                <motion.p
-                  className="text-7xl font-bold"
-                  layoutId={`title-${selectedId}`}
-                >
-                  {hoveredProject.title}
-                </motion.p>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {hoveredProject.tags.map((tag, index) => (
-                  <p className="font-medium text-sm px-3 py-1 rounded-full bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200/70">
-                    {tag.name}
-                  </p>
-                ))}
               </div>
             </div>
-            {hoveredProject.pargraphs.map((pargraph, index) => (
-              <p className="text-neutral-800" key={index}>
-                {pargraph.text}
-              </p>
-            ))}
+
+            <div className="md:col-span-2 flex flex-col gap-4">
+              {hoveredProject.pargraphs.map((pargraph, index) => (
+                <p className="text-neutral-800" key={index}>
+                  {pargraph.text}
+                </p>
+              ))}
+            </div>
+
+            <div className="space-y-4 ">
+              <div className="space-y-1.5">
+                <p className="font-bold">Stack Technique</p>
+                <div className="flex h-fit flex-wrap gap-0.5">
+                  {hoveredProject.tags.map((tag, index) => (
+                    <p className="">{tag.name},</p>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <p className="font-bold">Équipe</p>
+                <div className="flex h-fit flex-wrap gap-1.5">
+                  {hoveredProject.teams.map((team, index) => (
+                    <p className="">{team.name},</p>
+                  ))}
+                </div>
+              </div>
+              <div className="space-y-1.5">
+                <p className="font-bold">Commanditaire</p>
+                <div className="flex h-fit flex-wrap gap-1.5">
+                  {hoveredProject.sponsors.map((sponsor, index) => (
+                    <p className="">{sponsor.name}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <motion.div className="mt-4 h-fit md:col-span-3 lg:col-span-3 lg:col-start-3">
+              <motion.div className="space-y-6">
+                {hoveredProject.img.map((img, index) => (
+                  <motion.img
+                    src={img.url}
+                    className="rounded-xl shadow-lg w-full"
+                    alt="Picture of the project"
+                    layoutId={index === 0 ? "img-movable" : undefined}
+                    key={index}
+                    initial={index !== 0 ? { opacity: 0 } : undefined}
+                    animate={index !== 0 ? { opacity: 1 } : undefined}
+                    transition={index !== 0 ? { delay: 0.2 } : undefined}
+                  />
+                ))}
+              </motion.div>
+            </motion.div>
           </div>
-          <motion.button
-            className="w-8 h-8 bg-neutral-100 sticky top-10 ml-auto rounded-full"
-            onClick={() => setSelectedId(null)}
-          >
-            X
-          </motion.button>
         </motion.div>
       </motion.div>
     </motion.div>

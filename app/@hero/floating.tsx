@@ -34,9 +34,9 @@ export default function Floating() {
           transform: `translateX(${pixelToMove}px)`,
         },
         {
-          duration: 4000,
+          duration: 3500,
           fill: "forwards",
-          easing: "ease",
+          easing: "ease-out",
         }
       );
     }
@@ -44,19 +44,17 @@ export default function Floating() {
 
   return (
     <motion.a
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 4.2, duration: 1, ease: "easeOut" }}
+      initial={{ opacity: 0}}
+      animate={{ opacity: 1}}
+      transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
       href=""
       className="w-fit absolute top-[25%]"
       ref={floating}
     >
-      <div className="animate-fade animate-duration-1000 animate-delay-[4000ms] animate-ease-out">
-        <Image
+      <div>
+        <img
           src="/rolix-trailer.gif"
           className="w-96 rounded-xl shadow-lg"
-          width={500}
-          height={500}
           alt="Picture of the author"
         />
       </div>

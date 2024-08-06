@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 interface ProjectProps {
   title?: string;
@@ -50,9 +50,9 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
               }px)`,
             },
             {
-              duration: 4000,
+              duration: 3500,
               fill: "forwards",
-              easing: "ease",
+              easing: "ease-out",
             }
           );
         }
@@ -68,45 +68,6 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
     };
   }, []);
 
-    // annimate the floatingPrev element with no cut animation
-  const fadeInRef = useRef(null);
-  useEffect(() => {
-    if (fadeInRef.current) {
-
-      // remove the animation class
-      fadeInRef.current.classList.remove("animate-fade-up");
-
-      // Forcer un reflow pour redémarrer l'animation
-      void fadeInRef.current.offsetWidth;
-
-      // add the animation class
-      fadeInRef.current.classList.add("animate-fade-up");
-    }
-  }, [hoveredProject]);
-
-  // annimate the floatingPrev element with no cut animation
-  // const [isAnimating, setIsAnimating] = useState(false);
-  // const fadeInRef2 = useRef(null);
-  // useEffect(() => {
-  //   if (!isAnimating && fadeInRef2.current) {
-  //     setIsAnimating(true);
-
-  //     // remove the animation class
-  //     fadeInRef2.current.classList.remove("animate-wiggle");
-
-  //     // Forcer un reflow pour redémarrer l'animation
-  //     void fadeInRef2.current.offsetWidth;
-
-  //     // add the animation class
-  //     fadeInRef2.current.classList.add("animate-wiggle");
-
-  //     // add a timeout to remove the animation class
-  //     const timeout = setTimeout(() => {
-  //       setIsAnimating(false);
-  //     }, 1400);
-  //   }
-  // }, [hoveredProject]);
-
   return (
     <a
       href={hoveredProject?.link}
@@ -116,15 +77,19 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
       <motion.div>
         <motion.img
           src={hoveredProject?.img[0].url}
-          className="w-full aspect-video bg-cover rounded-lg shadow-lg animate-duration-[1400ms]"
+          className="w-full aspect-video bg-cover rounded-lg shadow-lg"
           alt="Picture of the project"
           layoutId="img-movable"
-          // ref={fadeInRef2}
         />
       </motion.div>
-      <div className="text-lg font-medium mt-5 ease-out animate-delay-300 animate-duration-[500ms]" >
-        <p className="font-bold">{hoveredProject?.title}</p>
-        <p className="leading-none">{hoveredProject?.description}</p>
+      <div className="text-lg font-medium mt-5">
+        <div className="overflow-hidden">
+          <p
+            key={hoveredProject?.description}
+          >
+            {hoveredProject?.description}
+          </p>
+        </div>
       </div>
     </a>
   );
