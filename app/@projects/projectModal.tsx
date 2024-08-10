@@ -29,7 +29,7 @@ export default function ProjectModal({
                 {hoveredProject.title}
               </motion.p>
               <motion.button
-                className="size-10 bg-black hover:bg-black/80 text-white rounded-full flex items-center justify-center"
+                className="size-10 bg-black hover:bg-black/80 transition-all text-white rounded-full flex items-center justify-center"
                 onClick={() => setSelectedId(null)}
               >
                 <svg

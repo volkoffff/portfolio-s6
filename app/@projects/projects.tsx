@@ -1,4 +1,5 @@
 "use client";
+import TextRevealByWord from "@/components/textReveal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FloatingPrev from "./floatingPrev";
@@ -292,46 +293,50 @@ export default function Projects() {
   const [selectedId, setSelectedId] = useState(null);
 
   return (
-    <section className="p-12 min-h-screen flex items-center">
-      <div className="group grid grid-cols-5 gap-16">
-        <div className="col-span-2 relative">
-          <FloatingPrev hoveredProject={hoveredProject} />
-        </div>
-        <div className="col-span-3">
-          <ul>
-            {projects.map((item, index) => (
-              <motion.button
-                className="project block w-full transition-all font-bold text-5xl md:text-7xl hover:cursor-default"
-                key={index}
-                onMouseMove={() => handleMouseEnter(index)}
-                onClick={() => setSelectedId(item.id)}
-              >
-                <motion.a
-                  layoutId={item.id}
-                  className={`block h-fit w-fit text-left ${
-                    hoveredProject === item
-                      ? "text-black"
-                      : "group-hover:text-neutral-400"
-                  }`}
+    <section className="p-12 py-10 md:py-20" id="project">
+      <div className=" flex items-center">
+        <div className="group grid grid-cols-5 gap-16">
+          <div className="col-span-2 relative">
+            {hoveredProject && (
+              <FloatingPrev hoveredProject={hoveredProject} />
+            )}
+          </div>
+          <div className="col-span-3">
+            <ul>
+              {projects.map((item, index) => (
+                <motion.button
+                  className="project block w-full transition-all font-bold text-4xl md:text-7xl hover:cursor-default"
+                  key={index}
+                  onMouseMove={() => handleMouseEnter(index)}
+                  onClick={() => setSelectedId(item.id)}
                 >
-                  <motion.p layoutId={`title-${item.id}`}>
-                    {item.title}
-                  </motion.p>
-                </motion.a>
-              </motion.button>
-            ))}
-          </ul>
+                  <motion.a
+                    layoutId={item.id}
+                    className={`block h-fit w-fit text-left ${
+                      hoveredProject === item
+                        ? "text-black"
+                        : "group-hover:text-neutral-400"
+                    }`}
+                  >
+                    <motion.p layoutId={`title-${item.id}`}>
+                      {item.title}
+                    </motion.p>
+                  </motion.a>
+                </motion.button>
+              ))}
+            </ul>
+          </div>
         </div>
+        <AnimatePresence>
+          {selectedId && hoveredProject && (
+            <ProjectModal
+              selectedId={selectedId}
+              hoveredProject={hoveredProject}
+              setSelectedId={setSelectedId}
+            />
+          )}
+        </AnimatePresence>
       </div>
-      <AnimatePresence>
-        {selectedId && hoveredProject && (
-          <ProjectModal
-            selectedId={selectedId}
-            hoveredProject={hoveredProject}
-            setSelectedId={setSelectedId}
-          />
-        )}
-      </AnimatePresence>
     </section>
   );
 }

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-48 pt-8">
+    <footer className="pt-8 mt-10 md:mt-20 ">
       <div className="px-12 space-y-6">
         <div className="flex justify-between items-end">
           <a href="#">
@@ -10,18 +10,18 @@ export default function Footer() {
         </div>
         <div className="flex justify-between">
           <div className="flex flex-col gap-1">
-            <a href="">Accueil</a>
-            <a href="">Profile</a>
-            <a href="">Travaux</a>
+            <a href="#home">Accueil</a>
+            <a href="#profile">Profile</a>
+            <a href="#project">Travaux</a>
           </div>
           <div className="flex flex-col gap-1">
-            <a href="">Github</a>
-            <a href="">Linkedin</a>
-            <a href="">Mail</a>
+            <a href="https://www.linkedin.com/in/robin-lanfranchi-905293231/">Github</a>
+            <a href="https://github.com/volkoffff">Linkedin</a>
+            <a href="mailto:robin.lanfranchi1338@gmail.com">Mail</a>
           </div>
         </div>
       </div>
-      <div className="w-full font-semibold flex justify-between px-12 py-6">
+      <div className="w-full font-semibold flex justify-between px-12 py-8">
         <p>Copyright ©2024 Robin Lanfranchi All rights reserved.</p>
         <p>handcrafted with love ❤</p>
       </div>

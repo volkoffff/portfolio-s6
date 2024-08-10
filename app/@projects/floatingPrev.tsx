@@ -77,7 +77,7 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
       <motion.div>
         <motion.img
           src={hoveredProject?.img[0].url}
-          className="w-full aspect-video bg-cover rounded-lg shadow-lg"
+          className="w-full aspect-video bg-cover rounded shadow-lg"
           alt="Picture of the project"
           layoutId="img-movable"
         />

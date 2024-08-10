@@ -5,8 +5,8 @@ export default function Navbar() {
   return (
     <header className="">
       <motion.nav
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1}}
+        initial={{ opacity: 0, filter: "blur(20px)" }}
+        animate={{ opacity: 1, filter: "blur(0px)" }}
         transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}
         className="z-50 fixed h-20 flex items-center w-full mix-blend-difference text-white"
       >
@@ -26,21 +26,21 @@ export default function Navbar() {
           <div className="flex gap-12 lg:gap-32 font-medium group [&>ul>li:hover]:!opacity-100 ">
             <ul className="flex [&>li]:group-has-[li:hover]:opacity-40">
               <li>
-                <a href="">Accueil</a>
+                <a href="#home">Accueil</a>
                 <span className="h-full">,</span>
               </li>
               <li>
-                <a href="">Profile</a>
+                <a href="#profile">Profile</a>
                 <span>,</span>
               </li>
               <li>
-                <a href="">Travaux</a>
+                <a href="#project">Travaux</a>
                 <span>,</span>
               </li>
             </ul>
             <ul className="[&>li]:group-has-[li:hover]:opacity-40">
               <li>
-                <a href="">Contact</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>

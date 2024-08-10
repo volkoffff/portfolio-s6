@@ -35,6 +35,7 @@ export default function Floating() {
         },
         {
           duration: 3500,
+          delay: 300,
           fill: "forwards",
           easing: "ease-out",
         }
