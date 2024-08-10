@@ -49,7 +49,7 @@ export function Contact() {
     >
       <div className="min-w-sm">
         <div className="line flex justify-between w-full">
-          <p className="word">Intéressez</p>
+          <p className="word">Intéressé</p>
           <p className="word">?</p>
         </div>
 
