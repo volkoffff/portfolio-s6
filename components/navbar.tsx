@@ -24,7 +24,7 @@ export default function Navbar() {
             </div>
           </div>
           <div className="flex gap-12 lg:gap-32 font-medium group [&>ul>li:hover]:!opacity-100 ">
-            <ul className="flex [&>li]:group-has-[li:hover]:opacity-40">
+            <ul className="flex [&>li]:group-has-[li:hover]:opacity-30">
               <li>
                 <a href="#home">Accueil</a>
                 <span className="h-full">,</span>
@@ -38,7 +38,7 @@ export default function Navbar() {
                 <span>,</span>
               </li>
             </ul>
-            <ul className="[&>li]:group-has-[li:hover]:opacity-40">
+            <ul className="[&>li]:group-has-[li:hover]:opacity-30">
               <li>
                 <a href="#contact">Contact</a>
               </li>

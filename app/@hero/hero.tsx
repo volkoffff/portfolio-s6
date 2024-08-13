@@ -1,11 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Floating from "./floating";
+import HeroModalFloating from "./heroModalFloating";
 
-export default function Hero() {
+export default function Hero({ projects }) {
   const textRef = useRef(null);
+  const [rolixOpen, setRolixOpen] = useState(false);
 
   useEffect(() => {
     const textElement = textRef.current;
@@ -38,7 +40,10 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="h-screen p-12 pt-20 flex flex-col justify-between" id="home">
+    <section
+      className="h-screen p-12 pt-20 flex flex-col justify-between"
+      id="home"
+    >
       <div>
         <p className=" flex items-start justify-between pointer-events-none user-select-none translate-y-[-1vw]">
           <span
@@ -49,7 +54,13 @@ export default function Hero() {
           </span>
         </p>
       </div>
-      <Floating />
+      <motion.div
+        onClick={() => {
+          setRolixOpen(true);
+        }}
+      >
+        <Floating projects={projects} />
+      </motion.div>
       <div className="flex justify-between items-end">
         <div className="flex flex-col gap-6">
           <div className="text-3xl lg:text-4xl font-medium">
@@ -57,7 +68,11 @@ export default function Hero() {
               <motion.h2
                 initial={{ y: 80 }}
                 animate={{ y: 0 }}
-                transition={{ delay: 2.2, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.95], }}
+                transition={{
+                  delay: 2.2,
+                  duration: 1.5,
+                  ease: [0.6, 0.01, -0.05, 0.95],
+                }}
               >
                 Je suis un développeur Créatif et
               </motion.h2>
@@ -66,7 +81,11 @@ export default function Hero() {
               <motion.h2
                 initial={{ y: 80 }}
                 animate={{ y: 0 }}
-                transition={{ delay: 2.35, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.95], }}
+                transition={{
+                  delay: 2.35,
+                  duration: 1.5,
+                  ease: [0.6, 0.01, -0.05, 0.95],
+                }}
               >
                 Professionnel qui m’engage et
               </motion.h2>
@@ -75,7 +94,11 @@ export default function Hero() {
               <motion.h2
                 initial={{ y: 80 }}
                 animate={{ y: 0 }}
-                transition={{ delay: 2.5, duration: 1.5, ease: [0.6, 0.01, -0.05, 0.95], }}
+                transition={{
+                  delay: 2.5,
+                  duration: 1.5,
+                  ease: [0.6, 0.01, -0.05, 0.95],
+                }}
               >
                 m'applique sur mes projets.
               </motion.h2>
@@ -99,6 +122,11 @@ export default function Hero() {
           (Scroll)
         </motion.p>
       </div>
+      <HeroModalFloating
+        hoveredProject={projects[0]}
+        open={rolixOpen}
+        setSelectedId={setRolixOpen}
+      />
     </section>
   );
 }

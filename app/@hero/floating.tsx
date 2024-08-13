@@ -1,9 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useRef } from "react";
 
-export default function Floating() {
+export default function Floating({ projects }) {
   // create a reference to the floating element
   const floating = useRef<HTMLDivElement>(null);
   var xMousePos = 0;
@@ -34,39 +33,45 @@ export default function Floating() {
           transform: `translateX(${pixelToMove}px)`,
         },
         {
-          duration: 3500,
-          delay: 300,
+          duration: 2500,
+          delay: 400,
           fill: "forwards",
-          easing: "ease-out",
+          easing: "ease-in-out",
         }
       );
     }
   };
 
   return (
-    <motion.a
-      initial={{ opacity: 0}}
-      animate={{ opacity: 1}}
-      transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
-      href=""
+    <motion.div
+      // initial={{ opacity: 0 }}
+      // animate={{ opacity: 1 }}
+      // transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
       className="w-fit absolute top-[25%]"
       ref={floating}
     >
-      <div>
-        <img
-          src="/rolix-trailer.gif"
-          className="w-96 rounded-xl shadow-lg"
-          alt="Picture of the author"
-        />
-      </div>
-      <div className="text-lg font-medium mt-4 ">
-        <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3800ms]">
-          Rolix / Librairie de composant
-        </p>
-        <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3950ms]">
-          (Entreprise - 2024 ft.Killian David)
-        </p>
-      </div>
-    </motion.a>
+      <motion.div
+        layoutId="box-movable"
+        className="p-2 bg-white/20 backdrop-blur-md rounded-2xl"
+      >
+        <motion.div layoutId="hero-img-movable">
+          <div>
+            <img
+              src="/rolix-trailer.gif"
+              className="w-96 rounded-xl"
+              alt="Picture of the author"
+            />
+          </div>
+          <div className="text-lg font-medium mt-4">
+            <p className="animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3800ms]">
+              Rolix / Librairie de composants
+            </p>
+            <p className="leading-none animate-fade-up animate-duration-1500 animate-ease-out animate-delay-[3950ms]">
+              (Entreprise - 2024 ft.Killian David)
+            </p>
+          </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 }

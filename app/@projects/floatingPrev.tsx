@@ -50,9 +50,9 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
               }px)`,
             },
             {
-              duration: 3500,
+              duration: 2500,
               fill: "forwards",
-              easing: "ease-out",
+              easing: "ease-in-out",
             }
           );
         }
@@ -69,28 +69,24 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
   }, []);
 
   return (
-    <a
+    <motion.a
+      ref={floatingPrev}
       href={hoveredProject?.link}
       className="w-fit absolute group-hover:opacity-100 transition-all duration-300"
-      ref={floatingPrev}
     >
-      <motion.div>
+      <motion.div className="p-2 bg-white/20 backdrop-blur-md rounded-2xl">
         <motion.img
           src={hoveredProject?.img[0].url}
-          className="w-full aspect-video bg-cover rounded shadow-lg"
+          className="w-full aspect-video bg-cover rounded-lg"
           alt="Picture of the project"
           layoutId="img-movable"
         />
       </motion.div>
-      <div className="text-lg font-medium mt-5">
+      <div className="text-lg font-semibold mt-5">
         <div className="overflow-hidden">
-          <p
-            key={hoveredProject?.description}
-          >
-            {hoveredProject?.description}
-          </p>
+          <p key={hoveredProject?.description}>{hoveredProject?.description}</p>
         </div>
       </div>
-    </a>
+    </motion.a>
   );
 }

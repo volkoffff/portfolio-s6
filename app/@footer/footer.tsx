@@ -15,8 +15,8 @@ export default function Footer() {
             <a href="#project">Travaux</a>
           </div>
           <div className="flex flex-col gap-1">
-            <a href="https://www.linkedin.com/in/robin-lanfranchi-905293231/">Github</a>
-            <a href="https://github.com/volkoffff">Linkedin</a>
+            <a href="https://github.com/volkoffff">Github</a>
+            <a href="https://www.linkedin.com/in/robin-lanfranchi-905293231/">Linkedin</a>
             <a href="mailto:robin.lanfranchi1338@gmail.com">Mail</a>
           </div>
         </div>
