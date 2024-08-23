@@ -77,16 +77,18 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
       <motion.div className="p-2 bg-white/20 backdrop-blur-md rounded-2xl">
         <motion.img
           src={hoveredProject?.img[0].url}
-          className="w-full aspect-video bg-cover rounded-lg"
+          className="aspect-video bg-cover rounded-lg w-96 max-w-none"
           alt="Picture of the project"
           layoutId="img-movable"
         />
-      </motion.div>
-      <div className="text-lg font-semibold mt-5">
-        <div className="overflow-hidden">
-          <p key={hoveredProject?.description}>{hoveredProject?.description}</p>
+        <div className="text-lg font-medium mt-4">
+          <div className="overflow-hidden">
+            <p key={hoveredProject?.description}>
+              {hoveredProject?.description}
+            </p>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </motion.a>
   );
 }
