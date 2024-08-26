@@ -15,7 +15,19 @@ export const metadata: Metadata = {
   description: "Robin Lanfranchi's portfolio",
 };
 
-const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  id: number;
+  img: { url: string }[];
+  links: { link: string; type: string; status: string }[];
+  teams: { name: string; role: string }[];
+  tags: { name: string }[];
+  sponsors: { name: string }[];
+  pargraphs: { text: string }[];
+};
+
+const projects: Project[] = [
   {
     title: "Rolix",
     description:

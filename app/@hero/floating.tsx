@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 
-export default function Floating({ projects }) {
+export default function Floating() {
   // create a reference to the floating element
   const floating = useRef<HTMLDivElement>(null);
   var xMousePos = 0;
@@ -16,7 +16,7 @@ export default function Floating({ projects }) {
       const floatingSize = floating.current.offsetWidth;
 
       // define the parent size of the floating element
-      const floatingParentSize = floating.current.parentElement?.offsetWidth;
+      const floatingParentSize = floating.current.parentElement?.offsetWidth || 0;
 
       // 12 is the padding of the parent, 4 is baseline tailwind padding, 2 is the number of padding right and left
       const floatingParentSizeWithoutPadding = floatingParentSize - 12 * 4 * 2;

@@ -4,13 +4,20 @@ import { gsap } from "gsap";
 import { useEffect, useRef, useState } from "react";
 import Floating from "./floating";
 import HeroModalFloating from "./heroModalFloating";
+import { Project } from "../layout";
 
-export default function Hero({ projects }) {
+interface HeroProps {
+  projects: Project[];
+}
+
+export default function Hero({ projects } : HeroProps) {
   const textRef = useRef(null);
   const [rolixOpen, setRolixOpen] = useState(false);
 
   useEffect(() => {
-    const textElement = textRef.current;
+    const textElement = textRef.current || null;
+    if (!textElement) return;
+    
     const text = textElement.innerText;
     textElement.innerHTML = "";
 
@@ -62,7 +69,7 @@ export default function Hero({ projects }) {
         animate={{ opacity: 1 }}
         transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
       >
-        <Floating projects={projects} />
+        <Floating />
       </motion.div>
       <div className="flex justify-between items-end">
         <div className="flex flex-col gap-6">
