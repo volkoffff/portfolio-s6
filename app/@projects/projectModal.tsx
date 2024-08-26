@@ -42,7 +42,7 @@ export default function ProjectModal({
                 <svg
                   stroke="currentColor"
                   fill="currentColor"
-                  stroke-width="0"
+                  strokeWidth="0"
                   viewBox="0 0 1024 1024"
                   height="1em"
                   width="1em"
@@ -63,7 +63,7 @@ export default function ProjectModal({
                     <svg
                       stroke="currentColor"
                       fill="none"
-                      stroke-width="2"
+                      strokeWidth="2"
                       viewBox="0 0 24 24"
                       stroke-linecap="round"
                       stroke-linejoin="round"
@@ -80,7 +80,7 @@ export default function ProjectModal({
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 1024 1024"
                       height="1em"
                       width="1em"
@@ -122,7 +122,9 @@ export default function ProjectModal({
                 <p className="font-bold">Commanditaire</p>
                 <div className="flex h-fit flex-wrap gap-1.5">
                   {hoveredProject.sponsors.map((sponsor, index) => (
-                    <p className="" key={index}>{sponsor.name}</p>
+                    <p className="" key={index}>
+                      {sponsor.name}
+                    </p>
                   ))}
                 </div>
               </div>

@@ -19,9 +19,7 @@ export default function HeroModalFloating({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
-            className="fixed w-full h-full overflow-y-scroll left-0 top-0 z-50 flex justify-center no-scrollbar"
-          >
+          <motion.div className="fixed w-full h-full overflow-y-scroll left-0 top-0 z-50 flex justify-center no-scrollbar">
             <motion.span
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -46,7 +44,7 @@ export default function HeroModalFloating({
                       <svg
                         stroke="currentColor"
                         fill="currentColor"
-                        stroke-width="0"
+                        strokeWidth="0"
                         viewBox="0 0 1024 1024"
                         height="1em"
                         width="1em"
@@ -67,7 +65,7 @@ export default function HeroModalFloating({
                           <svg
                             stroke="currentColor"
                             fill="none"
-                            stroke-width="2"
+                            strokeWidth="2"
                             viewBox="0 0 24 24"
                             strokeLinecap="round"
                             strokeLinejoin="round"

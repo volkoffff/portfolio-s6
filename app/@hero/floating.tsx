@@ -1,46 +1,55 @@
 "use client";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 
 export default function Floating() {
   // create a reference to the floating element
   const floating = useRef<HTMLDivElement>(null);
-  var xMousePos = 0;
 
-  document.onmousemove = function (e) {
-    // get the mouse position
-    xMousePos = e.clientX + window.pageXOffset;
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (floating.current) {
+        // get the mouse position
+        const xMousePos = e.clientX + window.pageXOffset;
 
-    if (floating.current) {
-      // define the size of the floating element
-      const floatingSize = floating.current.offsetWidth;
+        // define the size of the floating element
+        const floatingSize = floating.current.offsetWidth;
 
-      // define the parent size of the floating element
-      const floatingParentSize = floating.current.parentElement?.offsetWidth || 0;
+        // define the parent size of the floating element
+        const floatingParentSize = floating.current.parentElement?.offsetWidth || 0;
 
-      // 12 is the padding of the parent, 4 is baseline tailwind padding, 2 is the number of padding right and left
-      const floatingParentSizeWithoutPadding = floatingParentSize - 12 * 4 * 2;
-      const floatingPercent = (xMousePos / window.innerWidth) * 100;
+        // 12 is the padding of the parent, 4 is baseline tailwind padding, 2 is the number of padding right and left
+        const floatingParentSizeWithoutPadding = floatingParentSize - 12 * 4 * 2;
+        const floatingPercent = (xMousePos / window.innerWidth) * 100;
 
-      // calculate the position of the floating element
-      const pixelToMove =
-        ((floatingParentSizeWithoutPadding - floatingSize) / 100) *
-        floatingPercent;
+        // calculate the position of the floating element
+        const pixelToMove =
+          ((floatingParentSizeWithoutPadding - floatingSize) / 100) *
+          floatingPercent;
 
-      // annimate the floating element
-      floating.current.animate(
-        {
-          transform: `translateX(${pixelToMove}px)`,
-        },
-        {
-          duration: 2500,
-          delay: 400,
-          fill: "forwards",
-          easing: "ease-in-out",
-        }
-      );
-    }
-  };
+        // animate the floating element
+        floating.current.animate(
+          {
+            transform: `translateX(${pixelToMove}px)`,
+          },
+          {
+            duration: 2500,
+            delay: 400,
+            fill: "forwards",
+            easing: "ease-in-out",
+          }
+        );
+      }
+    };
+
+    // add the event listener
+    document.addEventListener("mousemove", handleMouseMove);
+
+    // cleanup event listener on component unmount
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   return (
     <motion.div
