@@ -115,7 +115,7 @@ export default function Hero({ projects } : HeroProps) {
             </div>
           </div>
           <motion.a
-            href=""
+            href="#profile"
             initial={{ opacity: 0, y: 30, filter: "blur(20px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ delay: 2.5, duration: 1, ease: "easeOut" }}

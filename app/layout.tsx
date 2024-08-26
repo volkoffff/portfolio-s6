@@ -46,7 +46,7 @@ const projects: Project[] = [
     ],
     links: [
       { link: "", type: "link", status: "private" },
-      { link: "www.github.com", type: "git", status: "public" },
+      { link: "", type: "git", status: "private" },
     ],
     teams: [{ name: "Killian David", role: "Développeur" }],
     tags: [
@@ -78,17 +78,8 @@ const projects: Project[] = [
       { url: "images/paoline2.png" },
     ],
     links: [
-      { link: "", type: "link", status: "progress" },
-      {
-        link: "https://github.com/volkoffff/paolinek-API",
-        type: "git",
-        status: "public",
-      },
-      {
-        link: "https://github.com/volkoffff/paolinek-interface",
-        type: "git",
-        status: "public",
-      },
+      { link: "https://github.com/volkoffff/paolinek-API", type: "git", status: "progress" },
+      { link: "https://github.com/volkoffff/paolinek-interface", type: "git", status: "progress" },
     ],
     teams: [],
     tags: [{ name: "React" }, { name: "Symfony" }, { name: "GSAP" }],
