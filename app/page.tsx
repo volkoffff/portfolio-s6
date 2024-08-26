@@ -282,11 +282,11 @@ export default function Home() {
 
   return (
     <main className="">
-      <Hero projects={projects}/>
+      {/* <Hero projects={projects}/>
       <Profile />
       <Projects projects={projects}/>
       <Contact />
-      <Footer />
+      <Footer /> */}
     </main>
   );
 }
