@@ -2,19 +2,22 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
+// Correction de l'interface pour inclure l'image
 interface ProjectProps {
   title?: string;
   description?: string;
-  image?: string;
+  image?: string; // Corrigé en "image" pour correspondre à l'utilisation dans le code
   link?: string;
+  img?: { url: string }[]; // Ajouté pour correspondre à l'utilisation dans le code
 }
+
 interface FloatingPrevProps {
   hoveredProject: ProjectProps;
 }
 
 export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
   // create a reference to the floating element
-  const floatingPrev = useRef<HTMLDivElement>(null);
+  const floatingPrev = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -27,7 +30,7 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
 
         // get the parent of the floatingPrev element
         const floatingPrevParent =
-          floatingPrev.current.parentElement?.getBoundingClientRect().top;
+          floatingPrev.current.parentElement?.getBoundingClientRect().top ?? 0;
 
         // position top of the page of the parent of the floating element
         const floatingPrevParentTopPosition =
@@ -38,7 +41,7 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
           cursorY > floatingPrevParentTopPosition + halfFloatingPrevHeight &&
           cursorY <
             floatingPrevParentTopPosition +
-              floatingPrev.current.parentElement?.offsetHeight! -
+              (floatingPrev.current.parentElement?.offsetHeight ?? 0) -
               halfFloatingPrevHeight
         ) {
           // annimate the floatingPrev element
@@ -76,7 +79,7 @@ export default function FloatingPrev({ hoveredProject }: FloatingPrevProps) {
     >
       <motion.div className="p-2 bg-white/20 backdrop-blur-md rounded-2xl">
         <motion.img
-          src={hoveredProject?.img[0].url}
+          src={hoveredProject?.img?.[0]?.url} // Correction de l'accès à l'image
           className="aspect-video bg-cover rounded-lg w-96 max-w-none"
           alt="Picture of the project"
           layoutId="img-movable"
