@@ -90,7 +90,7 @@ export default function Hero({ projects }) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                Professionnel qui m’engage et
+                Professionnel qui m&apos;engage et
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">
