@@ -64,7 +64,7 @@ export default function HeroModalFloating({
                         {hoveredProject.links.map((link, index) =>
                           link.type === "link" ? (
                             <LinkButton
-                              link=""
+                              link={link.link}
                               key={index}
                               className={cn(
                                 link.status === "private" &&
@@ -89,7 +89,8 @@ export default function HeroModalFloating({
                             </LinkButton>
                           ) : (
                             <LinkButton
-                              link=""
+                              link={link.link}
+                              key={index}
                               className={cn(
                                 link.status === "private" &&
                                   "opacity-30 pointer-events-none"

@@ -1,7 +1,7 @@
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import LinkButton from "../../components/linkButton";
 import { Project } from "../layout";
-import { cn } from "@/lib/utils";
 
 interface ProjectModalProps {
   selectedId: number;
@@ -61,7 +61,14 @@ export default function ProjectModal({
                 <div className="flex items-center gap-3">
                   {hoveredProject.links.map((link, index) =>
                     link.type === "link" ? (
-                      <LinkButton link="" key={index} className={cn(link.status === "private" && "opacity-30 pointer-events-none")}>
+                      <LinkButton
+                        link={link.link}
+                        key={index}
+                        className={cn(
+                          link.status === "private" &&
+                            "opacity-30 pointer-events-none"
+                        )}
+                      >
                         Link
                         <svg
                           stroke="currentColor"
@@ -79,7 +86,14 @@ export default function ProjectModal({
                         </svg>
                       </LinkButton>
                     ) : (
-                      <LinkButton link="" className={cn(link.status === "private" && "opacity-30 pointer-events-none")}>
+                      <LinkButton
+                        link={link.link}
+                        key={index}
+                        className={cn(
+                          link.status === "private" &&
+                            "opacity-30 pointer-events-none"
+                        )}
+                      >
                         Github
                         <svg
                           stroke="currentColor"
@@ -94,7 +108,7 @@ export default function ProjectModal({
                         </svg>
                       </LinkButton>
                     )
-                  )}      
+                  )}
                 </div>
               </div>
             </div>
