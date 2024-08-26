@@ -5,57 +5,47 @@ import FloatingPrev from "./floatingPrev";
 import ProjectModal from "./projectModal";
 import { Project } from "../layout";
 
+// Définition des types des props pour le composant Projects
 interface ProjectsProps {
   projects: Project[];
 }
 
+// Le composant Projects
 export default function Projects({ projects }: ProjectsProps) {
-  const [hoveredProject, setHoveredProject] = useState(null);
-  const [selectedId, setSelectedId] = useState(null);
+  // Définition du type des états
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
 
-  const handleMouseEnter = (index) => {
+  // Gestion du survol du projet
+  const handleMouseEnter = (index: number) => {
     setHoveredProject(projects[index]);
   };
 
   useEffect(() => {
-    setHoveredProject(projects[0]);
-  }, []);
+    // Initialisation de hoveredProject avec le premier projet si disponible
+    if (projects.length > 0) {
+      setHoveredProject(projects[0]);
+    }
+  }, [projects]);
 
   return (
-    // <div className="relative">
-    //     {projects.map((item, index) => (
-    //       <motion.div
-    //         onClick={() => setSelectedId(item.id)}
-    //         // onMouseMove={() => handleMouseEnter(index)}
-    //       >
-    //         <VelocityScroll
-    //           text={item.title}
-    //           default_velocity={3}
-    //           className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-    //         />
-    //       </motion.div>
-    //     ))}
-    //     <div className="absolute top-0 left-12 w-96 h-full pointer-events-none">
-    //       {hoveredProject && <FloatingPrev hoveredProject={hoveredProject} />}
-    //     </div>
-    //   </div>
     <section className="p-12 py-10 md:py-20" id="project">
-      <div className=" flex items-center">
+      <div className="flex items-center">
         <div className="group flex w-full gap-12">
           <div className="relative w-96 z-10">
             {hoveredProject && <FloatingPrev hoveredProject={hoveredProject} />}
           </div>
           <div>
             <ul>
-              {projects.map((item: Project, index) => (
+              {projects.map((item: Project, index: number) => (
                 <motion.button
                   className="project block w-full transition-all font-bold text-4xl md:text-8xl hover:cursor-default leading-[1rem] tracking-[-0.02em]"
-                  key={index}
+                  key={item.id} // Utilisation de l'id du projet comme clé
                   onMouseMove={() => handleMouseEnter(index)}
                   onClick={() => setSelectedId(item.id)}
                 >
                   <motion.a
-                    layoutId={item.id}
+                    layoutId={item.id.toString()}
                     className={`block h-fit w-fit text-left ${
                       hoveredProject === item
                         ? "text-black cursor-pointer z-10"
@@ -75,7 +65,7 @@ export default function Projects({ projects }: ProjectsProps) {
           </div>
         </div>
         <AnimatePresence>
-          {selectedId && hoveredProject && (
+          {selectedId !== null && hoveredProject && (
             <ProjectModal
               selectedId={selectedId}
               hoveredProject={hoveredProject}

@@ -23,7 +23,7 @@ export default function ProjectModal({
         onClick={() => setSelectedId(null)}
       ></motion.span>
       <motion.div
-        layoutId={selectedId}
+        layoutId={selectedId.toString()}
         className="relative z-1 min-h-[93%] h-fit mt-[7%] w-[90%] bg-white rounded-2xl shadow-[0_0px_50px_-15px_rgba(0,0,0,0.25)]"
       >
         <motion.div className="p-10 w-full h-fit">
