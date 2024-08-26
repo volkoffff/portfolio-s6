@@ -1,11 +1,18 @@
 import { motion } from "framer-motion";
 import LinkButton from "../../components/linkButton";
+import { Project } from "../layout";
+
+interface ProjectModalProps {
+  selectedId: number;
+  hoveredProject: Project;
+  setSelectedId: any;
+}
 
 export default function ProjectModal({
   selectedId,
   hoveredProject,
   setSelectedId,
-}) {
+}: ProjectModalProps) {
   return (
     <motion.div className="fixed w-full h-full overflow-y-scroll transition-all left-0 top-0 z-50 flex justify-center no-scrollbar">
       <motion.span

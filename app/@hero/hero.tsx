@@ -11,11 +11,11 @@ interface HeroProps {
 }
 
 export default function Hero({ projects } : HeroProps) {
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLSpanElement | null>(null);
   const [rolixOpen, setRolixOpen] = useState(false);
 
   useEffect(() => {
-    const textElement = textRef.current || null;
+    const textElement = textRef.current;
     if (!textElement) return;
     
     const text = textElement.innerText;

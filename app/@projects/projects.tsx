@@ -3,8 +3,13 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import FloatingPrev from "./floatingPrev";
 import ProjectModal from "./projectModal";
+import { Project } from "../layout";
 
-export default function Projects({ projects }) {
+interface ProjectsProps {
+  projects: Project[];
+}
+
+export default function Projects({ projects }: ProjectsProps) {
   const [hoveredProject, setHoveredProject] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
 
@@ -42,7 +47,7 @@ export default function Projects({ projects }) {
           </div>
           <div>
             <ul>
-              {projects.map((item, index) => (
+              {projects.map((item: Project, index) => (
                 <motion.button
                   className="project block w-full transition-all font-bold text-4xl md:text-8xl hover:cursor-default leading-[1rem] tracking-[-0.02em]"
                   key={index}
@@ -51,13 +56,6 @@ export default function Projects({ projects }) {
                 >
                   <motion.a
                     layoutId={item.id}
-                    // initial={{ opacity: 0, filter: "blur(20px)" }}
-                    // whileInView={{
-                    //   opacity: 1,
-                    //   filter: "blur(0px)",
-                    //   transition: { duration: 0.4 },
-                    // }}
-                    // viewport={{ once: true }}
                     className={`block h-fit w-fit text-left ${
                       hoveredProject === item
                         ? "text-black cursor-pointer z-10"
@@ -69,22 +67,6 @@ export default function Projects({ projects }) {
                       className="relative"
                     >
                       {item.title}
-                      {/* {hoveredProject === item && (
-                        <>
-                          <motion.span
-
-                            className="absolute -left-4 top-0 -translate-x-full whitespace-nowrap tracking-[-1rem]"
-                          >
-                            -----------------------------
-                          </motion.span>
-                          <motion.span
-
-                            className="absolute -right-4 top-0 translate-x-full whitespace-nowrap"
-                          >
-                            {"->"}
-                          </motion.span>
-                        </>
-                      )} */}
                     </motion.p>
                   </motion.a>
                 </motion.button>

@@ -1,12 +1,19 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import LinkButton from "../../components/linkButton";
+import { Project } from "../layout";
+
+interface ProjectModalProps {
+  setSelectedId: any;
+  hoveredProject: Project;
+  open: boolean;
+}
 
 export default function HeroModalFloating({
   hoveredProject,
   setSelectedId,
   open,
-}) {
+}: ProjectModalProps) {
   console.log("pag");
   return (
     <AnimatePresence>
