@@ -58,6 +58,9 @@ export default function Hero({ projects }) {
         onClick={() => {
           setRolixOpen(true);
         }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
       >
         <Floating projects={projects} />
       </motion.div>

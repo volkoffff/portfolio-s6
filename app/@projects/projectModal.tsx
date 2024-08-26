@@ -99,7 +99,7 @@ export default function ProjectModal({
                 <p className="font-bold">Stack Technique</p>
                 <div className="flex h-fit flex-wrap gap-0.5">
                   {hoveredProject.tags.map((tag, index) => (
-                    <p className="" key={index}>{tag.name},</p>
+                    <p key={index}>{tag.name},</p>
                   ))}
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function ProjectModal({
                 <p className="font-bold">Équipe</p>
                 <div className="flex h-fit flex-wrap gap-1.5">
                   {hoveredProject.teams.map((team, index) => (
-                    <p className="" key={index}>{team.name},</p>
+                    <p key={index}>{team.name},</p>
                   ))}
                 </div>
               </div>

@@ -103,7 +103,7 @@ export default function HeroModalFloating({
                       <p className="font-bold">Stack Technique</p>
                       <div className="flex h-fit flex-wrap gap-0.5">
                         {hoveredProject.tags.map((tag, index) => (
-                          <p className="">{tag.name},</p>
+                          <p key={index}>{tag.name},</p>
                         ))}
                       </div>
                     </div>
@@ -111,7 +111,7 @@ export default function HeroModalFloating({
                       <p className="font-bold">Équipe</p>
                       <div className="flex h-fit flex-wrap gap-1.5">
                         {hoveredProject.teams.map((team, index) => (
-                          <p className="">{team.name},</p>
+                          <p key={index}>{team.name},</p>
                         ))}
                       </div>
                     </div>
@@ -119,7 +119,7 @@ export default function HeroModalFloating({
                       <p className="font-bold">Commanditaire</p>
                       <div className="flex h-fit flex-wrap gap-1.5">
                         {hoveredProject.sponsors.map((sponsor, index) => (
-                          <p className="">{sponsor.name}</p>
+                          <p key={index}>{sponsor.name}</p>
                         ))}
                       </div>
                     </div>

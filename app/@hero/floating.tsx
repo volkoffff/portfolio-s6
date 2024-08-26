@@ -44,10 +44,7 @@ export default function Floating({ projects }) {
 
   return (
     <motion.div
-      // initial={{ opacity: 0 }}
-      // animate={{ opacity: 1 }}
-      // transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
-      className="w-fit absolute top-[25%]"
+      className="w-fit absolute top-[25%] hover:cursor-pointer"
       ref={floating}
     >
       <motion.div
