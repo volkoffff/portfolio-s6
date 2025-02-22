@@ -20,7 +20,7 @@ export default function Navbar() {
                 <span className="absolute top-0 left-0 w-3 h-3 rounded-full bg-pink-500 animate-ping "></span>
                 <span className="absolute top-0 left-0 w-3 h-3 rounded-full bg-pink-600"></span>
               </div>
-              <p className="font-medium">Disponible pour du Freelance</p>
+              <p className="font-medium">À la recherche d'un stage en septembre 2025</p>
             </div>
           </div>
           <div className="flex gap-12 lg:gap-32 font-medium group [&>ul>li:hover]:!opacity-100 ">

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 export default function Floating() {
   // create a reference to the floating element
@@ -51,6 +51,22 @@ export default function Floating() {
     };
   }, []);
 
+  const variants = {
+    initial: { 
+      opacity: 0,
+      backdropFilter: "blur(0px)",
+    },
+    animate: {
+      opacity: 1,
+      backdropFilter: "blur(10px)",
+      transition: { delay: 2.8, duration: 0.8, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      transition: { duration: 0.8, ease: "easeIn" } // Vous pouvez essayer d'ajouter delay ici, mais souvent, le delay à l'exit n'est pas respecté
+    }
+  };
+
   return (
     <motion.div
       className="w-fit absolute top-[25%] hover:cursor-pointer"
@@ -58,7 +74,11 @@ export default function Floating() {
     >
       <motion.div
         layoutId="box-movable"
-        className="p-2 bg-white/20 backdrop-blur-md rounded-2xl"
+        className="p-2 bg-white/20 rounded-2xl border-white"
+        variants={variants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <motion.div layoutId="hero-img-movable">
           <div>

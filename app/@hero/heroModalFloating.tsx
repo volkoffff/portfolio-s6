@@ -25,7 +25,7 @@ export default function HeroModalFloating({
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.2 } }}
-              className="fixed w-full h-full top-0 left-0 z-0 backdrop-blur-sm bg-black/20"
+              className="fixed w-full h-full top-0 left-0 z-0 backdrop-blur-sm bg-black/20 "
               onClick={() => setSelectedId(null)}
             ></motion.span>
             <motion.div

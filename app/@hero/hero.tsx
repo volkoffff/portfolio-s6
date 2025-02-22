@@ -19,6 +19,7 @@ export default function Hero({ projects } : HeroProps) {
     if (!textElement) return;
     
     const text = textElement.innerText;
+    textElement.classList.add("opacity-100");
     textElement.innerHTML = "";
 
     text.split("").forEach((char) => {
@@ -55,7 +56,7 @@ export default function Hero({ projects } : HeroProps) {
         <p className=" flex items-start justify-between pointer-events-none user-select-none translate-y-[-1vw]">
           <span
             ref={textRef}
-            className="flex justify-between w-full [&>span]:inline-block pointer-events-none user-select-none tracking-[-0.06em] leading-none whitespace-nowrap text-[14.4vw] lg:text-[15.2vw] font-semibold translate-y-[200px] translate-x-[-1.2%]"
+            className="opacity-0 flex justify-between w-full [&>span]:inline-block pointer-events-none user-select-none tracking-[-0.06em] leading-none whitespace-nowrap text-[14.4vw] lg:text-[15.2vw] font-semibold translate-y-[200px] translate-x-[-1.2%]"
           >
             LANFRANCHI
           </span>
@@ -65,9 +66,6 @@ export default function Hero({ projects } : HeroProps) {
         onClick={() => {
           setRolixOpen(true);
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3.1, duration: 0.8, ease: "easeOut" }}
       >
         <Floating />
       </motion.div>
