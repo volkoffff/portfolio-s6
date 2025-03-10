@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export function Contact() {
   return (
     <section className="py-10 md:py-20" id="contact">
-      <TextRevealByWord text="une mission, un projet ? contactez moi">
+      <TextRevealByWord text="Vous pensez que mon profil correspond à une offre de stage ? Contactez-moi !">
         <motion.div
           initial={{ opacity: 0, filter: "blur(20px)" }}
           whileInView={{

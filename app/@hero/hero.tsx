@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import Floating from "./floating";
 import HeroModalFloating from "./heroModalFloating";
 import { Project } from "../layout";
+import { AnimatedGradientText } from "@/components/magicui/animatedGradientText";
+import { cn } from "@/lib/utils";
 
 interface HeroProps {
   projects: Project[];
@@ -47,6 +49,18 @@ export default function Hero({ projects } : HeroProps) {
     });
   }, []);
 
+  const texts = [
+    "Hello",
+    "Morphing",
+    "Text",
+    "Animation",
+    "React",
+    "Component",
+    "Smooth",
+    "Transition",
+    "Engaging",
+  ];
+
   return (
     <section
       className="h-screen p-12 pt-20 flex flex-col justify-between"
@@ -82,7 +96,7 @@ export default function Hero({ projects } : HeroProps) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                Je suis un développeur Créatif et
+                Je suis un développeur <AnimatedGradientText>Créatif</AnimatedGradientText> et
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">
@@ -95,7 +109,7 @@ export default function Hero({ projects } : HeroProps) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                Professionnel qui m&apos;engage et
+                <AnimatedGradientText>Professionnel</AnimatedGradientText> qui m&apos;engage et
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">

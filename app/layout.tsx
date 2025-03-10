@@ -63,10 +63,42 @@ const projects: Project[] = [
     sponsors: [{ name: "Altermaker" }],
     pargraphs: [
       {
-        text: "En collaboration avec Killian David, j'ai conçu un modèle de départ pour nos logiciels destinés aux clients en entreprise. Étant donné que ces logiciels reposent souvent sur des bases similaires, nous avons développé ce modèle documenté et intégré à Figma. Cela nous permet de créer nos maquettes sur cette plateforme et de développer ensuite nos interfaces en utilisant les mêmes composants.",
+        text: "En collaboration avec Killian David durant mon alternance, j'ai développé une bibliothèque de composants documenté associé à un Figma.",
       },
       {
-        text: "Le template comprend de nombreux composants soigneusement nommés, chacun contenant exactement les mêmes noms de variantes que sur Figma. Cette uniformité facilite une transition fluide et optimale entre les deux plateformes.",
+        text: "Après avoir établi une nouvelle stack front pour nos logiciels d'éco-conception au sein d'Altermaker, nous avons décidé de créer une bibliothèque de composants afin d'optimiser notre processus de développement. En effet, les différents logiciels conçus durant l'année partageaient une base commune, ce qui nous permet désormais de réutiliser efficacement les mêmes éléments graphiques et fonctionnels, tout en garantissant une homogénéité et une meilleure maintenabilité des projets."
+      },
+      {
+        text: "Le template comprend de nombreux composants soigneusement développé pouvant s'adapter à de nombreuses situations, chacun d'entre eux est développé sur le modèle d'un figma en réspectant à l'identique le nom de variables et props. Cette uniformité facilite une transition fluide et optimale entre la phase de maquettage et de développement.",
+      },
+    ],
+  },
+  {
+    title: "Hive game",
+    description:
+      "Hive game est un projet scolaire en C++ visant à reprouire le jeu de plateau hive",
+    id: 9,
+    img: [
+      { url: "images/hive1.png" },
+      { url: "images/hive4.png" },
+      { url: "images/hive2.png" },
+      { url: "images/hive3.png" },
+    ],
+    links: [
+      { link: "https://github.com/volkoffff/paolinek-API", type: "git", status: "public" },
+    ],
+    teams: [
+      { name: "Pierre Fromont", role: "Développeur" },
+      { name: "Benoit de Miscault", role: "Développeur" }
+    ],
+    tags: [{ name: "C++" }, { name: "POO" }, { name: "GSAP" }, { name: "QT" }],
+    sponsors: [{ name: "UTC" }],
+    pargraphs: [
+      {
+        text: "Dans le cadre de l’UV LO21 à l'utc, nous avons développé une application permettant de jouer à Hive sur console et avec une interface, en C++.",
+      },
+      {
+        text: "Nous avons conçu le jeu avec une architecture la plus stable et propre possible, en respectant les normes S.O.L.I.D classiques en C++, et en implémentant de nombreux design patterns pour obtenir un code standardisé.",
       },
     ],
   },
@@ -89,10 +121,10 @@ const projects: Project[] = [
     sponsors: [{ name: "Paoline.K" }],
     pargraphs: [
       {
-        text: "Le front office en react est une galerie éxperimentale, chaque page à un univers diférent avec une manière de naviguer particulière, les animations sont réalisées avec GSAP.",
+        text: "L'interface graphique est en react est à été préalablement designer sur Figma. Le site a une approche experimental avec un univers diférent sur chaque page et avec une manière de naviguer particulière. L'ensemble des annimations sont réalisées à l'aide de GSAP.",
       },
       {
-        text: "Création d'un back office permettant l'ajout de nouvelles œuvres et collections, ainsi qu'une API rest.",
+        text: "L'API permettant la mise à jour des contenus du site est propulsé grace à symphony et API plateform.",
       },
     ],
   },
