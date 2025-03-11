@@ -85,7 +85,7 @@ const projects: Project[] = [
       { url: "images/hive3.png" },
     ],
     links: [
-      { link: "https://github.com/volkoffff/paolinek-API", type: "git", status: "public" },
+      { link: "https://github.com/Pierrafrom/HiveGame", type: "git", status: "public" },
     ],
     teams: [
       { name: "Pierre Fromont", role: "Développeur" },

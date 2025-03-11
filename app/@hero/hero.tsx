@@ -63,7 +63,7 @@ export default function Hero({ projects } : HeroProps) {
 
   return (
     <section
-      className="h-screen p-12 pt-20 flex flex-col justify-between"
+      className="h-screen p-4 md:p-12 pt-48 md:pt-20 flex flex-col justify-between"
       id="home"
     >
       <div>
@@ -77,6 +77,7 @@ export default function Hero({ projects } : HeroProps) {
         </p>
       </div>
       <motion.div
+        className="hidden sm:block"
         onClick={() => {
           setRolixOpen(true);
         }}
