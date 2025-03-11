@@ -32,14 +32,14 @@ export default function Projects({ projects }: ProjectsProps) {
     <section className="p-12 py-10 md:py-20" id="project">
       <div className="flex items-center">
         <div className="group flex w-full gap-12">
-          <div className="relative w-96 z-10">
+          <div className="relative w-96 z-10 hidden md:block">
             {hoveredProject && <FloatingPrev hoveredProject={hoveredProject} />}
           </div>
           <div>
             <ul>
               {projects.map((item: Project, index: number) => (
                 <motion.button
-                  className="project block w-full transition-all font-bold text-4xl md:text-8xl hover:cursor-default leading-[1rem] tracking-[-0.02em]"
+                  className="project block w-full transition-all font-bold text-6xl md:text-6xl lg:text-8xl hover:cursor-default leading-tight tracking-[-0.02em]"
                   key={item.id} // Utilisation de l'id du projet comme clé
                   onMouseMove={() => handleMouseEnter(index)}
                   onClick={() => setSelectedId(item.id)}
@@ -67,9 +67,9 @@ export default function Projects({ projects }: ProjectsProps) {
         <AnimatePresence>
           {selectedId !== null && hoveredProject && (
             <ProjectModal
-              selectedId={selectedId}
-              hoveredProject={hoveredProject}
-              setSelectedId={setSelectedId}
+            selectedId={selectedId}
+            hoveredProject={hoveredProject}
+            setSelectedId={setSelectedId}
             />
           )}
         </AnimatePresence>
