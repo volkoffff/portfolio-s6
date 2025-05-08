@@ -98,7 +98,7 @@ export default function Hero({ projects } : HeroProps) {
                 }}
               >
                 Elève ingénieur à l&apos;UTC à la recherche 
-                d'un <AnimatedGradientText>stage assistant ingénieur</AnimatedGradientText>
+                d&apos;un <AnimatedGradientText>stage assistant ingénieur</AnimatedGradientText>
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">
