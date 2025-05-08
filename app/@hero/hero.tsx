@@ -97,7 +97,8 @@ export default function Hero({ projects } : HeroProps) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                Je suis un développeur <AnimatedGradientText>Créatif</AnimatedGradientText> et
+                Elève ingénieur à l&apos;UTC à la recherche 
+                d'un <AnimatedGradientText>stage assistant ingénieur</AnimatedGradientText>
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">
@@ -110,7 +111,7 @@ export default function Hero({ projects } : HeroProps) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                <AnimatedGradientText>Professionnel</AnimatedGradientText> qui m&apos;engage et
+                à partir de<AnimatedGradientText> Septembre</AnimatedGradientText> pour la durée de <AnimatedGradientText>6 mois</AnimatedGradientText> en 
               </motion.h2>
             </div>
             <div className="overflow-hidden leading-tight">
@@ -123,7 +124,7 @@ export default function Hero({ projects } : HeroProps) {
                   ease: [0.6, 0.01, -0.05, 0.95],
                 }}
               >
-                m&apos;applique sur mes projets.
+                Conception logiciel / IA / Machine Learning / DB / Data Science
               </motion.h2>
             </div>
           </div>

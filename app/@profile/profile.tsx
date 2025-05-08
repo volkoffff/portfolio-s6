@@ -16,12 +16,34 @@ export function Profile() {
         className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
       />
       <VelocityScroll
+        text="Python"
+        default_velocity={3}
+        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      />
+      <VelocityScroll
+        text="Linux"
+        default_velocity={3}
+        direction="right"
+        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      />
+      <VelocityScroll
         text="SQL"
         default_velocity={3}
         className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
       />
       <VelocityScroll
         text="Lisp"
+        default_velocity={3}
+        direction="right"
+        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
+      />
+      <VelocityScroll
+        text="Github"
+        default_velocity={3}
+        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
+        />
+      <VelocityScroll
+        text="Docker"
         default_velocity={3}
         direction="right"
         className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
@@ -59,17 +81,6 @@ export function Profile() {
         direction="right"
         className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
         />
-      <VelocityScroll
-        text="Github"
-        default_velocity={3}
-        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
-        />
-      <VelocityScroll
-        text="Docker"
-        default_velocity={3}
-        direction="right"
-        className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm md:text-7xl md:leading-[5rem]"
-      />
       <VelocityScroll
         text="Figma"
         default_velocity={3}
